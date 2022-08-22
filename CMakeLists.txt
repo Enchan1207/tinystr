@@ -1,8 +1,8 @@
 #
-# strings
+# tinystr
 #
 cmake_minimum_required(VERSION 3.21)
-project(strings LANGUAGES C CXX)
+project(tinystr LANGUAGES C CXX)
 
 enable_testing()
 

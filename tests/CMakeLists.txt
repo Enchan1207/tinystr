@@ -14,13 +14,13 @@ FetchContent_MakeAvailable(googletest)
 include(GoogleTest)
 
 # generate testcases
-add_executable(strings_test
-    test_strings.cpp
+add_executable(tinystr_test
+    test_tinystr.cpp
 )
-target_link_libraries(strings_test
-    strings
+target_link_libraries(tinystr_test
+    tinystr
     GTest::gtest_main
 )
 include_directories(${PROJECT_SOURCE_DIR}/src ${GTEST_INCLUDE_DIRS})
 
-gtest_discover_tests(strings_test)
+gtest_discover_tests(tinystr_test)
