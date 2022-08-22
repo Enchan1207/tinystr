@@ -4,6 +4,7 @@ add_library(tinystr STATIC
     tinystr.h
     str.c
     strlist.c
+    char_repr.c
 )
 target_compile_options(tinystr PUBLIC -Wall)
 

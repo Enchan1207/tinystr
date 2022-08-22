@@ -7,7 +7,7 @@
  * @struct string_t
  * @brief 文字列型
  */
-typedef struct {
+typedef struct string_t {
     unsigned long length;  // 確保されているメモリの長さ
     char* value;           // 値へのポインタ
 } string_t;
@@ -16,10 +16,10 @@ typedef struct {
  * @struct string_list
  * @brief 文字列配列
  */
-struct string_list {
+typedef struct string_list {
     unsigned long count;  // 要素数
     string_t* value;      // 値へのポインタ
-};
+} string_list;
 
 // ---
 

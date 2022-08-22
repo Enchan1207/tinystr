@@ -17,6 +17,7 @@ include(GoogleTest)
 add_executable(tinystr_test
     test_string.cpp
     test_string_list.cpp
+    test_char_repr.cpp
 )
 target_link_libraries(tinystr_test
     tinystr
