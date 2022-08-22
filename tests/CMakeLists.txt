@@ -15,7 +15,8 @@ include(GoogleTest)
 
 # generate testcases
 add_executable(tinystr_test
-    test_tinystr.cpp
+    test_string.cpp
+    test_string_list.cpp
 )
 target_link_libraries(tinystr_test
     tinystr
