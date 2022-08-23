@@ -14,7 +14,7 @@ target_sources(tinystr
 
 # コンパイル設定
 target_compile_options(tinystr PUBLIC -Wall)
-include_directories(${PROJECT_SOURCE_DIR}/src)
+include_directories(${tinystr_SOURCE_DIR}/src)
 
 # インストール設定
 include(GNUInstallDirs)
