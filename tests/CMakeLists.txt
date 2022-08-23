@@ -11,7 +11,8 @@ FetchContent_Declare(
     GIT_TAG release-1.12.1
 )
 FetchContent_MakeAvailable(googletest)
-include(GoogleTest)
+include(GoogleTest RESULT_VARIABLE modpath)
+message(NOTICE ${modpath})
 
 # generate testcases
 add_executable(tinystr_test
