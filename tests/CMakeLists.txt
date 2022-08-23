@@ -3,7 +3,7 @@
 #
 cmake_minimum_required(VERSION 3.21)
 
-# cofigure unittest using GoogleTest
+# GoogleTestのフェッチと有効化
 include(FetchContent)
 FetchContent_Declare(
     googletest
@@ -11,18 +11,24 @@ FetchContent_Declare(
     GIT_TAG release-1.12.1
 )
 FetchContent_MakeAvailable(googletest)
-include(GoogleTest)
+include(GoogleTest) # gtest_系関数の読み込み
 
-# generate testcases
-add_executable(tinystr_test
+# tinystr_testターゲットの構成
+add_executable(tinystr_test)
+target_sources(tinystr_test PRIVATE
     test_string.cpp
     test_string_list.cpp
     test_char_repr.cpp
 )
-target_link_libraries(tinystr_test
+target_link_libraries(tinystr_test PRIVATE
     tinystr
     GTest::gtest_main
 )
-include_directories(${PROJECT_SOURCE_DIR}/src ${GTEST_INCLUDE_DIRS})
+target_include_directories(tinystr_test
+    PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+    ${GTEST_INCLUDE_DIRS}
+)
 
+# テストの実行
 gtest_discover_tests(tinystr_test)
