@@ -1,4 +1,4 @@
-# tinystr    {#mainpage}
+# tinystr
 
 [![CMake](https://github.com/Enchan1207/tinystr/actions/workflows/cmake.yml/badge.svg)](https://github.com/Enchan1207/tinystr/actions/workflows/cmake.yml)
 
