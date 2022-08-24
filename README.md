@@ -1,4 +1,4 @@
-# tinystr
+# tinystr    {#mainpage}
 
 [![CMake](https://github.com/Enchan1207/tinystr/actions/workflows/cmake.yml/badge.svg)](https://github.com/Enchan1207/tinystr/actions/workflows/cmake.yml)
 
@@ -6,7 +6,7 @@
 
 tiny string handling library for C
 
-## Usage
+## Setup
 
 To use this library, you need [cmake >= 3.21](https://cmake.org/).
 You can choose one of the following ways to use it:
@@ -56,6 +56,10 @@ cmake --install .
 
 Additionally, this library provides some flags.  
 In details, see output of `ccmake`.
+
+## Usage
+
+Under construction...
 
 ## License
 
