@@ -46,8 +46,3 @@ install(DIRECTORY ${tinystr_SOURCE_DIR}/include/
 install(EXPORT tinystr-config
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/tinystr
 )
-
-# configファイルを外部プロジェクト用に(インストールせずに)エクスポート
-# export(EXPORT tinystr-config
-#     FILE tinystr-config.cmake
-# )
