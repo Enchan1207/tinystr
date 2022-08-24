@@ -1,4 +1,114 @@
-/// @mainpage
-/// tinystr ドキュメント
+/**
+\mainpage Introduction
+
+tinysrtrは、Cで文字列型およびその配列を扱うためのシンプルなライブラリです。
 
 
+\par Installation
+ライブラリの使用にはcmakeが必要です。(詳細はリポジトリのREADMEにある [Setupセクション](https://github.com/Enchan1207/tinystr#setup)を参照してください。)
+
+\par Basic Usage - string_t
+
+\code {.cpp}
+#include <stdio.h>
+#include <tinystr.h>
+
+int main(int argc, char const* argv[]) {
+    string_t str;
+
+    // 初期化
+    const char* initial_value = "Hello,World";
+    init_string(&str, initial_value);
+    printf("%s\n", str.value);
+
+    // 再代入
+    const char* new_value = "New value (longer than initial value)";
+    set_string(&str, new_value);
+    printf("%s\n", str.value);
+
+    // メモリダンプ
+    dump_string(&str);
+
+    // 解放
+    free_string(&str);
+
+    return 0;
+}
+\endcode
+
+result:
+
+\code
+Hello,World
+New value (longer than initial value)
+struct string (37 chars, 38 bytes of memory was allocated)
+memory dump from head of str.value (0xXXXXXXXXXXXXXXXX):
+4E 65 77 20 76 61 6C 75 65 20 28 6C 6F 6E 67 65 
+72 20 74 68 61 6E 20 69 6E 69 74 69 61 6C 20 76 
+61 6C 75 65 29 00 
+string representation: New value (longer than initial value)
+\endcode
+
+\par Basic Usage - string_list
+
+\code {.cpp}
+#include <stdio.h>
+#include <tinystr.h>
+
+int main(int argc, char const* argv[]) {
+    struct string_list list;
+
+    // 要素数指定で初期化
+    const unsigned int count = 4;
+    init_string_list(&list, count);
+
+    // 再代入
+    const char* new_value = "New value (longer than initial value)";
+    set_string_list(&list, 0, new_value);
+
+    // 取得
+    for (int i = 0; i < list.count; i++) {
+        printf("%s\n", list.value[i].value);
+    }
+
+    // メモリダンプ
+    dump_string_list(&list);
+
+    // 解放
+    free_string_list(&list);
+
+    return 0;
+}
+
+\endcode
+
+result:
+
+\code
+./src/main
+
+
+
+
+struct string_list (4 elements)
+struct string (37 chars, 38 bytes of memory was allocated)
+memory dump from head of str.value (0xXXXXXXXXXXXXXXXX):
+4E 65 77 20 76 61 6C 75 65 20 28 6C 6F 6E 67 65 
+72 20 74 68 61 6E 20 69 6E 69 74 69 61 6C 20 76 
+61 6C 75 65 29 00 
+string representation: New value (longer than initial value)
+struct string (0 chars, 1 bytes of memory was allocated)
+memory dump from head of str.value (0xXXXXXXXXXXXXXXXX):
+00 
+string representation: 
+struct string (0 chars, 1 bytes of memory was allocated)
+memory dump from head of str.value (0xXXXXXXXXXXXXXXXX):
+00 
+string representation: 
+struct string (0 chars, 1 bytes of memory was allocated)
+memory dump from head of str.value (0xXXXXXXXXXXXXXXXX):
+00 
+string representation:
+\endcode
+
+*/
