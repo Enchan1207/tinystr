@@ -6,7 +6,6 @@
 cmake_minimum_required(VERSION 3.21)
 
 include(GNUInstallDirs) # to define CMAKE_INSTALL_XXXDIR
-set(CMAKE_INCLUDE_CURRENT_DIR_IN_INTERFACE ON)
 
 # オプション定義
 option(TINYSTR_BUILD_SHARED_LIBS "whether tinystr should be built as shared-library" OFF)
@@ -23,11 +22,11 @@ target_sources(tinystr PRIVATE
     strlist.c
     char_repr.c
 )
-target_include_directories(tinystr
-    PRIVATE
+target_include_directories(tinystr PRIVATE
+    ${tinystr_SOURCE_DIR}/include
+)
+target_include_directories(tinystr INTERFACE
     $<BUILD_INTERFACE:${tinystr_SOURCE_DIR}/include>
-
-    INTERFACE
     $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}>
 )
 target_compile_options(tinystr PRIVATE
