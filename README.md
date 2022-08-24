@@ -59,7 +59,7 @@ In details, see output of `ccmake`.
 
 ## Usage
 
-Under construction...
+Latest document is published under [GitHub Pages](https://enchan1207.github.io/tinystr/index.html).
 
 ## License
 

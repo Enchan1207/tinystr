@@ -12,8 +12,6 @@ PROJECT_BRIEF = "tiny string handling library for C"
 MARKDOWN_SUPPORT = YES
 FILE_PATTERNS = *.c *.cpp *.h *.hpp *.dox
 INPUT = index.dox src include
-#FILE_PATTERNS = *.c *.cpp *.h *.hpp
-#INPUT = src include
 INPUT_ENCODING = UTF-8
 
 # 出力設定
