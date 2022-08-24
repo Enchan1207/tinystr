@@ -25,30 +25,11 @@ target_sources(tinystr PRIVATE
 )
 target_include_directories(tinystr
     PRIVATE
-    ${tinystr_SOURCE_DIR}/include
+    $<BUILD_INTERFACE:${tinystr_SOURCE_DIR}/include>
 
     INTERFACE
     $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}>
 )
 target_compile_options(tinystr PRIVATE
     -Wall
-)
-
-# インストール構成
-install(TARGETS tinystr
-    EXPORT tinystr-export # tinystr-config.cmakeを生成する
-
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
-
-install(DIRECTORY ${tinystr_SOURCE_DIR}/include/
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-    FILES_MATCHING PATTERN "*.h"
-)
-
-install(EXPORT tinystr-export
-    FILE tinystr-config.cmake
-    DESTINATION share/cmake/tinystr
 )
