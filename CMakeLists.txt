@@ -48,6 +48,6 @@ install(EXPORT tinystr-config
 )
 
 # configファイルを外部プロジェクト用に(インストールせずに)エクスポート
-export(EXPORT tinystr-config
-    FILE tinystr-config.cmake
-)
+# export(EXPORT tinystr-config
+#     FILE tinystr-config.cmake
+# )
