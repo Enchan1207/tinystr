@@ -1,6 +1,13 @@
-//
-//
-//
+/**
+ * @file strlist.c
+ * @author Enchan1207
+ * @brief 文字列配列 (string_list) 周りの関数
+ * @version v0.2.0
+ * @date 2022-08-24
+ *
+ * @copyright Copyright (c) 2022 Enchan1207
+ *
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
