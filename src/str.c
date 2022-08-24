@@ -1,16 +1,23 @@
-//
-//
-//
-#include "tinystr.h"
-
+/**
+ * @file str.c
+ * @author Enchan1207
+ * @brief 文字列型 (string_t) 周りの関数
+ * @version v0.2.0
+ * @date 2022-08-24
+ *
+ * @copyright Copyright (c) 2022 Enchan1207
+ *
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#include "tinystr.h"
+
 /**
  * @brief 文字列型を初期化
  *
- * @param str 文字列型のポインタ
+ * @param self 文字列型のポインタ
  * @param initial 初期値 NULLの場合は'\0'となります。
  * @return 成功:0 失敗: -1
  */

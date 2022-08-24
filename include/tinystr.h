@@ -1,25 +1,38 @@
-//
-//
-//
+/**
+ * @file tinystr.h
+ * @author Enchan1207
+ * @brief メインヘッダ
+ * @version v0.2.0
+ * @date 2022-08-24
+ *
+ * @copyright Copyright (c) 2022 Enchan1207
+ *
+ */
 #pragma once
 
 /**
  * @struct string_t
  * @brief 文字列型
  */
-typedef struct string_t {
-    unsigned long length;  // 確保されているメモリの長さ
-    char* value;           // 値へのポインタ
+typedef struct {
+    //! 確保されているメモリの長さ
+    unsigned long length;
+
+    //! 値へのポインタ
+    char* value;
 } string_t;
 
 /**
  * @struct string_list
  * @brief 文字列配列
  */
-typedef struct string_list {
-    unsigned long count;  // 要素数
-    string_t* value;      // 値へのポインタ
-} string_list;
+struct string_list {
+    //! 要素数
+    unsigned long count;
+
+    //! 値へのポインタ
+    string_t* value;
+};
 
 // ---
 
